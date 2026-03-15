@@ -32,6 +32,66 @@ export function Pricing() {
             </CardContent>
           </Card>
 
+           {/* Pricing breakdown */}
+           <div className="reveal reveal-delay-1 mt-8">
+            <h3 className="mb-3 text-lg font-semibold text-foreground">
+              Okvirna razčlenitev cene
+            </h3>
+            <p className="mb-4 text-sm text-foreground/80">
+              Spodnja razčlenitev prikazuje, kako je približno razporejen strošek po
+              glavnih sklopih projekta. Zneski so informativni in služijo boljši
+              predstavi, vsa dela pa se izvajajo kot celota po fiksni skupni ceni.
+            </p>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Sklop</TableHead>
+                  <TableHead className="text-right">Okvirni delež</TableHead>
+                  <TableHead className="text-right">Okvirni znesek</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell>
+                    Načrtovanje rešitve, delavnice in priprava strukture sistema
+                  </TableCell>
+                  <TableCell className="text-right">20 %</TableCell>
+                  <TableCell className="text-right font-mono">€1.600</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    Oblikovanje grafičnega vmesnika in uporabniške izkušnje
+                  </TableCell>
+                  <TableCell className="text-right">20 %</TableCell>
+                  <TableCell className="text-right font-mono">€1.600</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    Izvedba sistema za shranjevanje podatkov in logiko delovanja
+                  </TableCell>
+                  <TableCell className="text-right">30 %</TableCell>
+                  <TableCell className="text-right font-mono">€2.400</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    Vzpostavitev skrbniških pogledov, uporabniških računov in
+                    osnovnih nastavitev
+                  </TableCell>
+                  <TableCell className="text-right">15 %</TableCell>
+                  <TableCell className="text-right font-mono">€1.200</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>
+                    Namestitev, testiranje, navodila za uporabo in podpora po
+                    predaji
+                  </TableCell>
+                  <TableCell className="text-right">15 %</TableCell>
+                  <TableCell className="text-right font-mono">€1.200</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+
           <Separator className="reveal my-8" />
 
           {/* Includes / Excludes */}
