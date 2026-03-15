@@ -36,6 +36,7 @@ export function NextSteps() {
 
           <div className="reveal reveal-delay-2">
             <Button
+              nativeButton={false}
               render={<a href="mailto:info@lamalabs.si" />}
               className="h-12 gap-2 bg-accent px-8 text-base font-semibold text-accent-foreground hover:bg-accent/90"
             >
