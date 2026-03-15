@@ -24,92 +24,87 @@ export function Pricing() {
           <Card className="reveal border-0 ring-2 ring-primary/20 shadow-md">
             <CardContent className="py-10 text-center">
               <p className="font-mono text-5xl font-bold tracking-tight text-primary sm:text-6xl">
-                €20.000
+                €8.000
               </p>
               <p className="mt-3 text-base text-muted-foreground">
-                Fiksna cena za celoten obseg, opisan v tej ponudbi.
+                Končna fiksna cena za celoten obseg, opisan v tej ponudbi.
               </p>
             </CardContent>
           </Card>
 
-          {/* Payment schedule */}
-          <div className="reveal reveal-delay-1 mt-8">
-            <h3 className="mb-4 text-lg font-semibold text-foreground">
-              Plačilo v treh obrokih
-            </h3>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Obrok</TableHead>
-                  <TableHead>Mejnik</TableHead>
-                  <TableHead className="text-right">Znesek</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableCell className="font-medium">40%</TableCell>
-                  <TableCell>Ob začetku</TableCell>
-                  <TableCell className="text-right font-mono">€8.000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">30%</TableCell>
-                  <TableCell>Po zaključku faze 2</TableCell>
-                  <TableCell className="text-right font-mono">€6.000</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="font-medium">30%</TableCell>
-                  <TableCell>Ob predaji</TableCell>
-                  <TableCell className="text-right font-mono">€6.000</TableCell>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-
           <Separator className="reveal my-8" />
 
           {/* Includes / Excludes */}
-          <div className="reveal reveal-delay-2 grid gap-8 sm:grid-cols-2">
-            <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
-                Vključuje
-              </h4>
-              <ul className="space-y-2.5">
-                {[
-                  "Razvoj backend in frontend",
-                  "Responsiven dizajn (telefon + računalnik)",
-                  "Namestitev na strežnik",
-                  "30 dni podpore po predaji",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-foreground/70"
-                  >
-                    <Check className="mt-0.5 size-4 shrink-0 text-success" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          <div className="reveal reveal-delay-2 space-y-8">
+            <p className="text-sm text-foreground/80">
+              V ceno je vključena priprava celotne rešitve, ki bo stranki
+              omogočala enostavno uporabo preko računalnika in mobilnih naprav.
+              Uporabniki bodo imeli na voljo jasno, pregledno in sodobno grafično
+              okolje, do katerega bodo dostopali prek spletnega brskalnika, brez
+              potrebe po dodatni namestitvi programov.
+            </p>
+
+            <div className="grid gap-8 sm:grid-cols-2">
+              <div>
+                <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                  Vključeno v ceno
+                </h4>
+                <ul className="space-y-2.5">
+                  {[
+                    "Načrtovanje uporabniške izkušnje in priprava grafičnega vmesnika, ki bo razumljiv tudi manj tehnično podkovanim uporabnikom.",
+                    "Prilagodljiv (responsive) dizajn, ki bo lepo deloval na računalnikih, tablicah in telefonih.",
+                    "Vzpostavitev sistema za shranjevanje in obdelavo podatkov, da bodo informacije varno shranjene in vedno dostopne po prijavi.",
+                    "Priprava skrbniškega pogleda, kjer boste lahko urejali vsebino, podatke in osnovne nastavitve sistema.",
+                    "Vzpostavitev uporabniških računov (prijava z uporabniškim imenom in geslom) ter osnovne ravni pravic za različne tipe uporabnikov.",
+                    "Namestitev delujoče rešitve na dogovorjeno okolje (npr. oblak ali obstoječi strežnik) in osnovna konfiguracija.",
+                    "Osnovno testiranje ključnih funkcionalnosti ter odprava napak, ki jih odkrijemo v tej fazi.",
+                    "Kratka pisna navodila in kratko uvajalno izobraževanje (online), da boste rešitev lahko samostojno uporabljali.",
+                    "30 dni podpore po predaji projekta za manjše popravke in pomoč pri uporabi v okviru dogovorjenih funkcionalnosti.",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-foreground/70"
+                    >
+                      <Check className="mt-0.5 size-4 shrink-0 text-success" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Ni vključeno v ceno
+                </h4>
+                <ul className="space-y-2.5">
+                  {[
+                    "Mesečni stroški strežnika, domene, e‑poštnih predalov ali drugih naročnin pri zunanjih ponudnikih.",
+                    "Dodatne funkcionalnosti ali večje spremembe, ki niso opisane v tej ponudbi (npr. povsem nove vrste modulov ali zaslonov).",
+                    "Priprava vsebin (besedila, fotografije, videi), profesionalno fotografiranje ali snemanje.",
+                    "Napredne integracije z internimi sistemi (npr. obstoječimi računovodskimi, proizvodnimi ali CRM sistemi).",
+                    "Nadaljnji razvoj po zaključku projekta (novi moduli, nadgradnje ali večje prilagoditve po predaji).",
+                    "Podpora končnim uporabnikom (helpdesk za vaše stranke) izven dogovorjenega obdobja podpore.",
+                    "Daljše ali ponavljajoče se izobraževanje zaposlenih, ki presega osnovno uvajalno izobraževanje.",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2 text-sm text-foreground/70"
+                    >
+                      <Minus className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Ne vključuje
-              </h4>
-              <ul className="space-y-2.5">
-                {[
-                  "Strežniška infrastruktura (mesečni strošek)",
-                  "Nadaljnji razvoj izven opisanega obsega",
-                  "Integracija z obstoječim CRM sistemom",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-2 text-sm text-foreground/70"
-                  >
-                    <Minus className="mt-0.5 size-4 shrink-0 text-muted-foreground" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+
+            <p className="text-sm text-foreground/80">
+              Za navedeno ceno dobite delujoč, pregleden in za
+              uporabo preprost spletni sistem, ki bo vašim uporabnikom dostopen
+              preko računalnika in mobilnih naprav, vam pa bo omogočal varen
+              vpogled in urejanje podatkov. Vse dodatne želje, razširitve ali
+              zunanje mesečne naročnine niso vključene v ceno in bodo, če se zanje
+              naknadno odločite, predmet ločenega dogovora.
+            </p>
           </div>
         </div>
       </div>
