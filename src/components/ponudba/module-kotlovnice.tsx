@@ -82,18 +82,18 @@ const FEATURES = [
 
 export function ModuleKotlovnice() {
   return (
-    <section id="kotlovnice" className="bg-texture py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="kotlovnice" className="bg-secondary py-20 sm:py-24">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-20">
         <div className="reveal mb-10">
           <div className="mb-4 flex items-center gap-3">
             <Badge variant="outline" className="font-mono text-xs uppercase tracking-wider">
               Modul 2
             </Badge>
           </div>
-          <h2 className="mb-4 text-2xl font-bold text-primary sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-brand-orange-red sm:text-3xl">
             Upravljanje kotlovnic
           </h2>
-          <p className="max-w-3xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Nov modul za evidenco in vzdrževanje kotlovnic ter toplotnih podpostaj.
             Zasnovan za hitro delo na terenu (QR skeniranje) in pregledno spremljanje
             stanja v pisarni.

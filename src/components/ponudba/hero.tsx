@@ -1,45 +1,34 @@
-import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-hero text-hero-foreground">
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
-
-      <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32 lg:py-40">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-start md:gap-10 lg:gap-12">
+      <div className="relative mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28 lg:px-20 lg:py-36">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-8">
-            <p className="mb-6 font-heading text-xs font-bold tracking-[0.3em] text-accent uppercase">
+            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-brand-orange">
               LAMA LABS
             </p>
-            <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-              Ponudba za razvoj sistema
+            <h1 className="mb-4 text-3xl font-bold uppercase leading-tight sm:text-4xl lg:text-[48px] lg:leading-[58px]">
+              PONUDBA ZA RAZVOJ SISTEMA
             </h1>
-            <p className="mb-2 font-heading text-lg font-medium text-hero-muted sm:text-xl">
-              Krštinc — Upravljanje kotlovnic &amp; evidenca zaposlenih
+            <div className="mb-5 h-[3px] w-10 bg-white" />
+            <p className="text-xl font-bold text-white/90 underline underline-offset-4">
+              Krštinc d.o.o.
             </p>
-            <p className="mt-6 text-base leading-relaxed text-hero-muted/80 sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-hero-muted sm:text-lg">
               Celovita rešitev za upravljanje kotlovnic, terenski servis
               in evidenco delovnega časa — v eni aplikaciji.
             </p>
 
             <div className="mt-10">
-              <Button
-                nativeButton={false}
-                render={<a href="#povzetek" />}
-                className="h-11 gap-2 bg-accent px-6 text-sm font-semibold text-accent-foreground hover:bg-accent/90"
+              <a
+                href="#povzetek"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-red px-8 py-3 text-base font-bold uppercase tracking-[0.04em] text-white transition-colors hover:bg-brand-orange-red"
               >
-                Preglej ponudbo
+                PREGLEJ PONUDBO
                 <ArrowDown className="size-4" />
-              </Button>
+              </a>
             </div>
           </div>
 
@@ -52,9 +41,6 @@ export function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }

@@ -17,6 +17,7 @@ export default function PonudbaPage() {
 
   return (
     <div ref={revealRef}>
+      <div className="brand-bar" />
       <Nav />
       <Hero />
       <main>

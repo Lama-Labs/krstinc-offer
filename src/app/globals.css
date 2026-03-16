@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ── Tailwind v4 theme: shadcn semantic tokens + Lama Labs proposal theme ── */
+/* ── Tailwind v4 theme: Krštinc design system mapped to shadcn tokens ──── */
 @theme inline {
   /* shadcn semantic color tokens */
   --color-background: var(--background);
@@ -53,55 +53,58 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   /* Font families */
-  --font-sans: var(--font-dm-sans);
-  --font-heading: var(--font-plus-jakarta);
+  --font-sans: var(--font-open-sans);
+  --font-heading: var(--font-open-sans);
   --font-mono: var(--font-jetbrains-mono);
 
-  /* Lama Labs semantic colors */
-  --color-success: #16a34a;
-  --color-warning: #d97706;
-  --color-info: #2563eb;
+  /* Krštinc brand colors */
+  --color-brand-red: #ec1d24;
+  --color-brand-orange-red: #f2551a;
+  --color-brand-orange: #f88b10;
+  --color-success: #27ae60;
+  --color-warning: #f88b10;
+  --color-info: #4394e7;
 
-  /* Lama Labs hero/dark section */
+  /* Krštinc hero/dark section */
   --color-hero: #0F2B3C;
   --color-hero-foreground: #ffffff;
   --color-hero-muted: #94a3b8;
 }
 
-/* ── Light theme: Lama Labs proposal mapped to shadcn tokens ──────────────── */
+/* ── Light theme: Krštinc design system mapped to shadcn tokens ──────────── */
 :root {
-  --background: #FAFAF8;
-  --foreground: #1A1A1A;
+  --background: #ffffff;
+  --foreground: #2c2c2c;
   --card: #ffffff;
-  --card-foreground: #1A1A1A;
+  --card-foreground: #2c2c2c;
   --popover: #ffffff;
-  --popover-foreground: #1A1A1A;
-  --primary: #0F2B3C;
+  --popover-foreground: #2c2c2c;
+  --primary: #ec1d24;
   --primary-foreground: #ffffff;
-  --secondary: #F0F0EC;
-  --secondary-foreground: #1A1A1A;
-  --muted: #F5F5F1;
-  --muted-foreground: #6B7280;
-  --accent: #E8853D;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #2c2c2c;
+  --muted: #f5f5f5;
+  --muted-foreground: #808080;
+  --accent: #f2551a;
   --accent-foreground: #ffffff;
-  --destructive: #EF4444;
-  --border: #E5E5E0;
-  --input: #E5E5E0;
-  --ring: #0F2B3C;
-  --chart-1: #0F2B3C;
-  --chart-2: #E8853D;
-  --chart-3: #16a34a;
-  --chart-4: #2563eb;
-  --chart-5: #6B7280;
-  --radius: 0.625rem;
-  --sidebar: #F5F5F1;
-  --sidebar-foreground: #1A1A1A;
-  --sidebar-primary: #0F2B3C;
+  --destructive: #ec1d24;
+  --border: #e5e5e5;
+  --input: #cccccc;
+  --ring: #ec1d24;
+  --chart-1: #ec1d24;
+  --chart-2: #f2551a;
+  --chart-3: #f88b10;
+  --chart-4: #27ae60;
+  --chart-5: #4394e7;
+  --radius: 0.25rem;
+  --sidebar: #f5f5f5;
+  --sidebar-foreground: #2c2c2c;
+  --sidebar-primary: #ec1d24;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #F0F0EC;
-  --sidebar-accent-foreground: #1A1A1A;
-  --sidebar-border: #E5E5E0;
-  --sidebar-ring: #0F2B3C;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #2c2c2c;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #ec1d24;
 }
 
 /* ── Base styles ─────────────────────────────────────────────────────────── */
@@ -111,19 +114,36 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 16px;
+    line-height: 26px;
   }
   html {
     @apply font-sans scroll-smooth;
   }
-  h1, h2, h3, h4 {
-    font-family: var(--font-heading);
-  }
 }
 
-/* ── Subtle background texture for light sections ────────────────────────── */
-.bg-texture {
-  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.03) 1px, transparent 0);
-  background-size: 24px 24px;
+/* ── Brand gradient bar ──────────────────────────────────────────────────── */
+.brand-bar {
+  height: 4px;
+  background: linear-gradient(to right, #ec1d24, #f88b10);
+}
+
+/* ── Accent bars (left vertical stripe) ──────────────────────────────────── */
+.accent-bar {
+  flex-shrink: 0;
+  width: 4px;
+  border-radius: 2px;
+}
+.accent-bar-red { background: #ec1d24; }
+.accent-bar-orange { background: #f2551a; }
+.accent-bar-amber { background: #f88b10; }
+
+/* ── Square bullet ───────────────────────────────────────────────────────── */
+.sq-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
 /* ── Scroll-triggered reveal animation ───────────────────────────────────── */

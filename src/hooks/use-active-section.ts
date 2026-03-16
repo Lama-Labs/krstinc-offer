@@ -20,17 +20,25 @@ export function useActiveSection() {
   const [active, setActive] = useState<SectionId>("povzetek");
 
   useEffect(() => {
+    const visibleIds = new Set<string>();
+
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            visibleIds.add(e.target.id);
+          } else {
+            visibleIds.delete(e.target.id);
+          }
+        }
 
-        if (visible.length > 0) {
-          setActive(visible[0].target.id as SectionId);
+        // pick the first section (in document order) that is currently visible
+        const next = SECTIONS.find((id) => visibleIds.has(id));
+        if (next) {
+          setActive(next);
         }
       },
-      { threshold: 0.2, rootMargin: "-80px 0px -40% 0px" }
+      { threshold: 0.05, rootMargin: "-80px 0px -40% 0px" }
     );
 
     SECTIONS.forEach((id) => {

@@ -3,16 +3,18 @@ import { Separator } from "@/components/ui/separator";
 export function Footer() {
   return (
     <footer className="bg-hero text-hero-foreground">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <div className="mx-auto max-w-[1400px] px-5 py-12 sm:px-8 lg:px-20">
         <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
           <div className="flex-1">
-            <p className="font-heading text-sm font-bold tracking-[0.2em] uppercase">
-              LAMA LABS
-            </p>
-            <div className="mt-3 space-y-1 text-sm text-hero-muted">
-              <p>info@lamalabs.si</p>
-              <p>040 123 456</p>
+            <div className="flex items-center gap-3">
+              <img src="/lama-labs.svg" alt="Lama Labs" className="h-7 w-auto brightness-0 invert" />
+              <span className="text-sm font-bold tracking-[0.2em] uppercase">
+                LAMA LABS
+              </span>
             </div>
+            <p className="mt-3 text-sm text-hero-muted">
+              info@lama-labs.com
+            </p>
           </div>
           <div className="text-sm text-hero-muted">
             <p>Ljubljana, marec 2026</p>
@@ -23,6 +25,7 @@ export function Footer() {
           Ta ponudba je zaupne narave in namenjena izključno naslovniku.
         </p>
       </div>
+      <div className="brand-bar" />
     </footer>
   );
 }

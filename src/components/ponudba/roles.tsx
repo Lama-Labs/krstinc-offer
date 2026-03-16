@@ -43,9 +43,9 @@ const ROLES = [
 export function Roles() {
   return (
     <section id="vloge" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-20">
         <div className="reveal mb-12">
-          <h2 className="mb-4 text-2xl font-bold text-primary sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl">
             Uporabniške vloge
           </h2>
         </div>
@@ -56,18 +56,18 @@ export function Roles() {
             return (
               <Card
                 key={role.title}
-                className={`reveal reveal-delay-${i + 1} border-0 ring-1 ring-border/60 shadow-sm`}
+                className={`reveal reveal-delay-${i + 1} border-border shadow-sm`}
               >
                 <CardHeader>
                   <div className="mb-2 flex items-center gap-3">
-                    <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
-                      <Icon className="size-5 text-primary" />
+                    <div className="flex size-10 items-center justify-center rounded-lg bg-brand-red/10">
+                      <Icon className="size-5 text-brand-red" />
                     </div>
                     <Badge variant="secondary" className="text-xs">
                       {role.badge}
                     </Badge>
                   </div>
-                  <CardTitle className="text-lg font-semibold text-primary">
+                  <CardTitle className="text-lg font-semibold text-brand-red">
                     {role.title}
                   </CardTitle>
                 </CardHeader>
@@ -78,7 +78,7 @@ export function Roles() {
                         key={j}
                         className="flex items-start gap-2 text-sm leading-relaxed text-foreground/70"
                       >
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-orange-red" />
                         {f}
                       </li>
                     ))}

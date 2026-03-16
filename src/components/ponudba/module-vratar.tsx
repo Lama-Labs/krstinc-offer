@@ -18,6 +18,8 @@ const FEATURES = [
       "Izbira vozila s samodejnim prenosom začetnih kilometrov",
       "Končni kilometri, parkirnine, relacije (opis poti)",
       "Zaposleni lahko ureja vnos samo 24 ur za nazaj",
+      "Validacija podatkov — sistem opozori na manjkajoča polja",
+      "Pregled in kopiranje preteklih vnosov za hitrejše delo",
     ],
   },
   {
@@ -27,6 +29,7 @@ const FEATURES = [
       "Pregled dneva za posameznega zaposlenega ali vse (admin)",
       "Pregled meseca in leta s skupnimi urami, nadurami, odsotnostmi",
       "Dashboard z obveznostmi za tekoči dan (to-do seznam)",
+      "Obvestila o prihajajočih nalogah in opomnikih",
     ],
   },
   {
@@ -43,6 +46,7 @@ const FEATURES = [
       "Vnos dopusta in bolniške z obdobjem (od–do)",
       "Pregled preostalih dni dopusta",
       "Avtomatski izračun ur v mesecu",
+      "Letni pregled odsotnosti po tipu (dopust, bolniška, praznik)",
     ],
   },
   {
@@ -52,6 +56,7 @@ const FEATURES = [
       "Evidenca prisotnosti (interna, za delavce, računovodska)",
       "Letni pregled vseh zaposlenih",
       "Izvoz v Excel/CSV",
+      "Mesečni povzetek ur in nadur za računovodstvo",
     ],
   },
 ];
@@ -59,17 +64,17 @@ const FEATURES = [
 export function ModuleVratar() {
   return (
     <section id="vratar" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-20">
         <div className="reveal mb-10">
           <div className="mb-4 flex items-center gap-3">
             <Badge variant="outline" className="font-mono text-xs uppercase tracking-wider">
               Modul 1
             </Badge>
           </div>
-          <h2 className="mb-4 text-2xl font-bold text-primary sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-brand-red sm:text-3xl">
             Vratar — Evidenca zaposlenih
           </h2>
-          <p className="max-w-3xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             Popoln prepis obstoječe Android aplikacije Vratar v sodobno spletno aplikacijo
             z izboljšano uporabniško izkušnjo, dostopno na vseh napravah.
           </p>

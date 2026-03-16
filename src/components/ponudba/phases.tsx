@@ -15,47 +15,50 @@ const PHASES = [
   {
     phase: "Faza 2",
     title: "Modul Vratar",
-    duration: "2–3 tedne",
+    duration: "3–4 tedne",
     items: [
-      "Koledar z dnevnimi vnosi",
-      "Pregled meseca/leta",
-      "Vozila in kilometri",
-      "Izvoz podatkov (Excel, PDF)",
-      "Dashboard za zaposlenega",
+      "Koledar z dnevnimi vnosi in pregled meseca/leta",
+      "Vozila, sledenje kilometrov in relacije",
+      "Dopusti, bolniške in avtomatski izračun ur",
+      "Dashboard z obveznostmi za tekoči dan",
+      "Obvestila in to-do seznam za zaposlenega",
+      "Izvoz podatkov (Excel, PDF) — potni nalogi, evidenca prisotnosti",
+      "Testiranje modula in popravki",
     ],
   },
   {
     phase: "Faza 3",
     title: "Modul Kotlovnice",
-    duration: "3–4 tedne",
+    duration: "2–3 tedne",
     items: [
       "Entitete kotlovnic s konfigurabilnimi polji",
       "QR skeniranje in izbor storitve",
       "Kontrolni obhodi s potrditvenimi polji",
       "Vse vrste storitev z beleženjem",
       "Hiter pregled stanja (dashboard z lučkami)",
-      "Dnevnik in zgodovina",
+      "Dnevnik, zgodovina in izvoz v PDF",
+      "Testiranje modula in popravki",
     ],
   },
   {
     phase: "Faza 4",
-    title: "Zaključek",
+    title: "Integracija & predaja",
     duration: "1 teden",
     items: [
-      "Obvestila in to-do seznam",
-      "Testiranje in popravki",
-      "Namestitev in predaja",
-      "Uvajanje uporabnikov",
+      "Povezava obeh modulov v celoto — enotna izkušnja",
+      "Končno testiranje in odpravljanje napak",
+      "Namestitev na produkcijsko okolje",
+      "Uvajanje uporabnikov in kratko izobraževanje",
     ],
   },
 ];
 
 export function Phases() {
   return (
-    <section id="faze" className="bg-texture py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section id="faze" className="bg-secondary py-20 sm:py-24">
+      <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-20">
         <div className="reveal mb-12">
-          <h2 className="mb-4 text-2xl font-bold text-primary sm:text-3xl">
+          <h2 className="mb-4 text-2xl font-bold text-foreground sm:text-3xl">
             Faze razvoja
           </h2>
         </div>
@@ -71,11 +74,11 @@ export function Phases() {
                 className={`reveal reveal-delay-${i + 1} relative sm:pl-14`}
               >
                 {/* Timeline dot */}
-                <div className="absolute top-1 left-[12px] hidden size-[15px] rounded-full border-[3px] border-accent bg-background sm:block" />
+                <div className="absolute top-1 left-[12px] hidden size-[15px] rounded-full border-[3px] border-brand-orange-red bg-background sm:block" />
 
-                <div className="rounded-xl border border-border/60 bg-card p-6 shadow-sm">
+                <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
                   <div className="mb-3 flex flex-wrap items-center gap-3">
-                    <Badge className="bg-primary text-primary-foreground font-mono text-xs">
+                    <Badge className="bg-brand-red text-white font-mono text-xs">
                       {phase.phase}
                     </Badge>
                     <h3 className="text-lg font-semibold text-foreground">
@@ -91,7 +94,7 @@ export function Phases() {
                         key={j}
                         className="flex items-start gap-2 text-sm leading-relaxed text-foreground/70"
                       >
-                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
+                        <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-orange-red" />
                         {item}
                       </li>
                     ))}
