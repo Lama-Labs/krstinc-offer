@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-start sm:text-left">
           <div className="flex-1">
             <div className="flex items-center gap-3">
-              <img src="/lama-labs.svg" alt="Lama Labs" className="h-7 w-auto brightness-0 invert" />
+              <img src="/lama-labs.svg" alt="Lama Labs" className="h-7 w-auto" /> {/* brightness-0 invert */}
               <span className="text-sm font-bold tracking-[0.2em] uppercase">
                 LAMA LABS
               </span>

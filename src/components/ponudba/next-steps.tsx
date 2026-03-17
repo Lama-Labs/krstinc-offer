@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 const STEPS = [
   "Pregled ponudbe in potrditev obsega",
   "Podpis pogodbe in prvi obrok",
-  "Začetek razvoja — prvi rezultati v 2 tednih",
+  "Začetek razvoja (prvi rezultati v 2 tednih)",
 ];
 
 export function NextSteps() {

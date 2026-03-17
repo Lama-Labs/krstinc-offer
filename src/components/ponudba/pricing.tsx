@@ -461,6 +461,32 @@ export function Pricing() {
               odločite, predmet ločenega dogovora.
             </p>
           </div>
+
+          <Separator className="reveal my-8" />
+
+          {/* Monthly maintenance */}
+          <div className="reveal reveal-delay-1">
+            <h3 className="mb-4 text-lg font-semibold text-foreground">
+              Mesečno vzdrževanje
+            </h3>
+            <Card className="border-border ring-1 ring-brand-red/15 shadow-sm">
+              <CardContent className="py-8">
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:gap-10">
+                  <div className="shrink-0 text-center sm:text-left">
+                    <p className="font-mono text-4xl font-bold text-brand-red">
+                      €130
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">/ mesec</p>
+                  </div>
+                  <div className="space-y-3 text-sm leading-relaxed text-foreground/75">
+
+                    <p> Storitev mesečnega vzdrževanja vključuje stroške <strong className="text-foreground">strežniške infrastrukture</strong> in <strong className="text-foreground">podatkovne baze</strong>, na katerih aplikacija teče in kjer so shranjeni vaši podatki, ter <strong className="text-foreground">redno vzdrževanje sistema</strong> (varnostne kopije, ki ščitijo vaše podatke, posodabljanje komponent in varnostnih protokolov, ki skrbijo za dolgoročno stabilnost in zaščito sistema). Vključena je tudi <strong className="text-foreground">osnovna tehnična podpora</strong> v primeru morebitnih težav.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
