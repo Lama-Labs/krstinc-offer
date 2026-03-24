@@ -20,7 +20,7 @@ export function Summary() {
 
         <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
           <StatCard value="3 moduli" label="Vratar · Kotlovnice · CRM" delay={1} />
-          <StatCard value="~10 tednov" label="Predviden čas razvoja" delay={2} />
+          <StatCard value="~12 tednov" label="Predviden čas razvoja" delay={2} />
           <StatCard
             value="3 vloge"
             label="Admin · Serviser · Pregledovalec"
