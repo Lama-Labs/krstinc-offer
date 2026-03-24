@@ -6,7 +6,7 @@ export function Hero() {
       <div className="relative mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28 lg:px-20 lg:py-36">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-center md:gap-16">
           <div className="md:col-span-8">
-            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-brand-orange">
+            <p className="mb-6 text-sm font-bold uppercase tracking-[0.3em] text-hero-foreground">
               LAMA LABS
             </p>
             <h1 className="mb-4 text-3xl font-bold uppercase leading-tight sm:text-4xl lg:text-[48px] lg:leading-[58px]">
