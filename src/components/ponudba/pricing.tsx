@@ -240,6 +240,59 @@ export function Pricing() {
             </CardContent>
           </Card>
 
+          {/* Bonus section */}
+          <div className="reveal reveal-delay-1 mt-10 rounded-lg border border-brand-orange/25 bg-brand-orange/5 p-6 sm:p-8">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/10">
+                <Gift className="size-4.5 text-brand-orange" />
+              </div>
+              <Badge className="bg-brand-orange/15 text-brand-orange text-xs font-semibold">
+                Bonus ob naročilu celotnega paketa
+              </Badge>
+            </div>
+
+            <h3 className="mb-3 text-lg font-semibold text-foreground">
+              Prenova spletne strani — vključena v paket
+            </h3>
+
+            <p className="mb-5 max-w-2xl text-sm leading-relaxed text-foreground/70">
+              Ker bomo v sklopu projekta že vzpostavljali celotno infrastrukturo
+              in oblikovno podlago sistema, smo pripravili tudi osvežen dizajn
+              vaše obstoječe spletne strani. Grafična zasnova je že pripravljena
+              — ob naročilu celotnega paketa implementacijo in objavo izvedemo
+              brez dodatnega stroška.
+            </p>
+
+            <p className="mb-5 text-sm font-medium text-foreground/80">
+              Vrednost:{" "}
+              <span className="text-muted-foreground line-through">€1.500</span>{" "}
+              <span className="text-brand-orange">→ vključeno v paket</span>
+            </p>
+
+            <ul className="mb-5 grid gap-2 sm:grid-cols-2">
+              {[
+                "Implementacija novega dizajna po obstoječih Figma zasnovah",
+                "Odzivna (responsive) postavitev za mobilne naprave in računalnike",
+                "Objava na obstoječi domeni",
+                "Osnovno testiranje prikaza na ključnih napravah in brskalnikih",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2 text-sm text-foreground/70"
+                >
+                  <Check className="mt-0.5 size-4 shrink-0 text-brand-orange" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Bonus velja ob naročilu vseh treh modulov (Vratar + Kotlovnice +
+              CRM). Dizajn temelji na obstoječih Figma zasnovah — morebitne
+              večje vsebinske ali strukturne spremembe niso vključene.
+            </p>
+          </div>
+
           {/* Phase-by-phase pricing breakdown */}
           <div className="reveal reveal-delay-1 mt-10">
             <h3 className="mb-3 text-lg font-semibold text-foreground">
@@ -308,6 +361,22 @@ export function Pricing() {
                     </TableCell>
                   </TableRow>
                 ))}
+                <TableRow className="bg-brand-orange/5">
+                  <TableCell className="font-medium text-brand-orange">
+                    Bonus
+                  </TableCell>
+                  <TableCell>Prenova spletne strani</TableCell>
+                  <TableCell className="text-right font-mono text-xs">
+                    1 teden
+                  </TableCell>
+                  <TableCell className="hidden min-[540px]:table-cell" />
+                  <TableCell className="text-right font-mono text-brand-orange">
+                    <span className="mr-1 text-muted-foreground line-through">
+                      €1.500
+                    </span>
+                    €0
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableFooter>
                 <TableRow className="bg-muted/50 font-semibold">
@@ -420,71 +489,6 @@ export function Pricing() {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Bonus section */}
-          <div className="reveal mt-10 rounded-lg border border-brand-orange/25 bg-brand-orange/5 p-6 sm:p-8">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/10">
-                <Gift className="size-4.5 text-brand-orange" />
-              </div>
-              <Badge className="bg-brand-orange/15 text-brand-orange text-xs font-semibold">
-                Bonus ob naročilu celotnega paketa
-              </Badge>
-            </div>
-
-            <h3 className="mb-3 text-lg font-semibold text-foreground">
-              Prenova spletne strani — vključena v paket
-            </h3>
-
-            <p className="mb-5 max-w-2xl text-sm leading-relaxed text-foreground/70">
-              Ker bomo v sklopu projekta že vzpostavljali celotno infrastrukturo
-              in oblikovno podlago sistema, smo pripravili tudi osvežen dizajn
-              vaše obstoječe spletne strani. Grafična zasnova je že pripravljena
-              — ob naročilu celotnega paketa implementacijo in objavo izvedemo
-              brez dodatnega stroška.
-            </p>
-
-            <p className="mb-5 text-sm font-medium text-foreground/80">
-              Vrednost:{" "}
-              <span className="text-muted-foreground line-through">€1.500</span>{" "}
-              <span className="text-brand-orange">→ vključeno v paket</span>
-            </p>
-
-            <ul className="mb-5 grid gap-2 sm:grid-cols-2">
-              {[
-                "Implementacija novega dizajna po obstoječih Figma zasnovah",
-                "Odzivna (responsive) postavitev za mobilne naprave in računalnike",
-                "Objava na obstoječi domeni",
-                "Osnovno testiranje prikaza na ključnih napravah in brskalnikih",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 text-sm text-foreground/70"
-                >
-                  <Check className="mt-0.5 size-4 shrink-0 text-brand-orange" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Bonus velja ob naročilu vseh treh modulov (Vratar + Kotlovnice +
-              CRM). Dizajn temelji na obstoječih Figma zasnovah — morebitne
-              večje vsebinske ali strukturne spremembe niso vključene.
-            </p>
-          </div>
-
-          {/* Total value summary */}
-          <div className="reveal mt-6 text-center text-sm text-foreground/70">
-            <p>
-              Skupna vrednost paketa:{" "}
-              <span className="font-medium text-foreground">€13.000</span>{" "}
-              (razvoj sistema + prenova spletne strani)
-            </p>
-            <p className="mt-1 font-semibold text-foreground">
-              Vaša cena: €10.600 — prenova spletne strani vključena kot bonus
-            </p>
           </div>
 
           <Separator className="reveal my-8" />
