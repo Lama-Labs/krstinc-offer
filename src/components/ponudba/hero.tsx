@@ -17,8 +17,8 @@ export function Hero() {
               Krštinc d.o.o.
             </p>
             <p className="mt-6 text-base leading-relaxed text-hero-muted sm:text-lg">
-              Celovita rešitev za upravljanje kotlovnic, terenski servis
-              in evidenco delovnega časa — v eni aplikaciji.
+              Celovita rešitev za evidenco zaposlenih, upravljanje kotlovnic
+              in CRM z delovnimi nalogi — v eni aplikaciji.
             </p>
 
             <div className="mt-10">

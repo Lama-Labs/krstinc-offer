@@ -6,6 +6,7 @@ const SECTIONS = [
   "povzetek",
   "vratar",
   "kotlovnice",
+  "crm",
   "vloge",
   "faze",
   "cena",

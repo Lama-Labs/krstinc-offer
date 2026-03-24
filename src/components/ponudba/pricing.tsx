@@ -14,7 +14,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Check, Minus, RotateCcw } from "lucide-react";
+import { Check, Gift, Minus, RotateCcw } from "lucide-react";
 
 const PHASES = [
   {
@@ -37,6 +37,12 @@ const PHASES = [
   },
   {
     phase: "Faza 4",
+    title: "Modul CRM",
+    duration: "2–3 tedne",
+    baseAmount: 2600,
+  },
+  {
+    phase: "Faza 5",
     title: "Integracija & predaja",
     duration: "1 teden",
     baseAmount: 1200,
@@ -128,11 +134,37 @@ const PHASE_DETAILS = [
   },
   {
     phase: "Faza 4",
+    title: "Modul CRM",
+    items: [
+      {
+        name: "Integracija z računovodskim programom",
+        desc: "Vzpostavitev povezave z obstoječim računovodskim programom za uvoz podatkov o strankah in materialnem šifrantu. Podatki se samodejno prenesejo v CRM, brez ročnega prepisovanja.",
+      },
+      {
+        name: "Delovni nalogi in dodeljevanje",
+        desc: "Sistem za ustvarjanje delovnih nalogov, dodeljevanje serviserjem s koledarskim prikazom ter statusno sledenje (nov → dodeljen → v izvajanju → zaključen).",
+      },
+      {
+        name: "Terenska aplikacija za zaključevanje",
+        desc: "Vmesnik na telefonu, kjer serviser potrdi opravljen nalog, zabeleži porabljeni material in količine ter doda opombe — brez potrebe po vrnitvi v pisarno.",
+      },
+      {
+        name: "Povratni tok za računovodstvo",
+        desc: "Zaključeni nalogi s šiframi, količinami in cenami se samodejno pošljejo nazaj v računovodski program, kjer se izda račun brez dodatnega dela.",
+      },
+      {
+        name: "Testiranje integracije",
+        desc: "Preizkus celotnega toka podatkov: iz računovodstva v CRM, na teren in nazaj v računovodstvo. Preverjanje pravilnosti šifer, cen in količin.",
+      },
+    ],
+  },
+  {
+    phase: "Faza 5",
     title: "Integracija & predaja",
     items: [
       {
         name: "Povezava modulov v enotno aplikacijo",
-        desc: "Usklajevanje obeh modulov (Vratar in Kotlovnice) v skupno okolje — enotna prijava, skupna navigacija in konsistentna uporabniška izkušnja.",
+        desc: "Povezava vseh treh modulov v celoto — enotna prijava, skupna navigacija in konsistentna uporabniška izkušnja.",
       },
       {
         name: "Končno testiranje in zagotavljanje kakovosti",
@@ -151,10 +183,12 @@ const PHASE_DETAILS = [
 ];
 
 function formatEuro(amount: number) {
-  return `€${amount.toLocaleString("sl-SI")}`;
+  const str = amount.toString();
+  const formatted = str.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+  return `€${formatted}`;
 }
 
-const DEFAULT_ADJUSTMENTS = [0, 0, 0, 0];
+const DEFAULT_ADJUSTMENTS = [0, 0, 0, 0, 0];
 
 export function Pricing() {
   const [adjustments, setAdjustments] = useState(DEFAULT_ADJUSTMENTS);
@@ -168,7 +202,7 @@ export function Pricing() {
   }, []);
 
   const resetAll = useCallback(() => {
-    setAdjustments([0, 0, 0, 0]);
+    setAdjustments([0, 0, 0, 0, 0]);
   }, []);
 
   const phaseAmounts = PHASES.map(
@@ -193,17 +227,71 @@ export function Pricing() {
                 {formatEuro(total)}
                 {isDefault && (
                   <span className="text-2xl font-medium text-muted-foreground sm:text-3xl">
-                    ±10%
+                    ±5%
                   </span>
                 )}
               </p>
               <p className="mt-3 text-base text-muted-foreground">
-                Ocenjena cena za celoten obseg, opisan v tej ponudbi. Končni
-                znesek se lahko giblje med €7.200 in €8.800, odvisno od
-                natančnega obsega in morebitnih prilagoditev med razvojem.
+                Ocenjena cena za celoten obseg vseh treh modulov (Vratar,
+                Kotlovnice, CRM), vključno s paketnim popustom. Končni znesek
+                se lahko giblje med €10.070 in €11.130, odvisno od natančnega
+                obsega in morebitnih prilagoditev med razvojem.
               </p>
             </CardContent>
           </Card>
+
+          {/* Bonus section */}
+          <div className="reveal reveal-delay-1 mt-10 rounded-lg border border-brand-orange/25 bg-brand-orange/5 p-6 sm:p-8">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex size-9 items-center justify-center rounded-lg bg-brand-orange/10">
+                <Gift className="size-4.5 text-brand-orange" />
+              </div>
+              <Badge className="bg-brand-orange/15 text-brand-orange text-xs font-semibold">
+                Bonus ob naročilu celotnega paketa
+              </Badge>
+            </div>
+
+            <h3 className="mb-3 text-lg font-semibold text-foreground">
+              Prenova spletne strani — vključena v paket
+            </h3>
+
+            <p className="mb-5 max-w-2xl text-sm leading-relaxed text-foreground/70">
+              Ker bomo v sklopu projekta že vzpostavljali celotno infrastrukturo
+              in oblikovno podlago sistema, smo pripravili tudi osvežen dizajn
+              vaše obstoječe spletne strani. Grafična zasnova je že pripravljena
+              — ob naročilu celotnega paketa implementacijo in objavo izvedemo
+              brez dodatnega stroška.
+            </p>
+
+            <p className="mb-5 text-sm font-medium text-foreground/80">
+              Vrednost:{" "}
+              <span className="text-muted-foreground line-through">€1.500</span>{" "}
+              <span className="text-brand-orange">→ vključeno v paket</span>
+            </p>
+
+            <ul className="mb-5 grid gap-2 sm:grid-cols-2">
+              {[
+                "Implementacija novega dizajna po obstoječih Figma zasnovah",
+                "Odzivna (responsive) postavitev za mobilne naprave in računalnike",
+                "Objava na obstoječi domeni",
+                "Osnovno testiranje prikaza na ključnih napravah in brskalnikih",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-2 text-sm text-foreground/70"
+                >
+                  <Check className="mt-0.5 size-4 shrink-0 text-brand-orange" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Bonus velja ob naročilu vseh treh modulov (Vratar + Kotlovnice +
+              CRM). Dizajn temelji na obstoječih Figma zasnovah — morebitne
+              večje vsebinske ali strukturne spremembe niso vključene.
+            </p>
+          </div>
 
           {/* Phase-by-phase pricing breakdown */}
           <div className="reveal reveal-delay-1 mt-10">
@@ -213,7 +301,7 @@ export function Pricing() {
             <p className="mb-6 text-sm text-foreground/80">
               Spodnja razčlenitev prikazuje, kako je strošek razporejen po fazah
               razvoja in kakšne tehnične zahteve vključuje posamezna faza.
-              Premikajte drsnike, da prilagodite obseg posamezne faze za ±10 %.
+              Premikajte drsnike, da prilagodite obseg posamezne faze za ±5 %.
             </p>
 
             {/* Interactive summary table */}
@@ -247,8 +335,8 @@ export function Pricing() {
                         </span>
                         <input
                           type="range"
-                          min={-10}
-                          max={10}
+                          min={-5}
+                          max={5}
                           step={1}
                           value={adjustments[i]}
                           onChange={(e) =>
@@ -273,6 +361,22 @@ export function Pricing() {
                     </TableCell>
                   </TableRow>
                 ))}
+                <TableRow className="bg-brand-orange/5">
+                  <TableCell className="font-medium text-brand-orange">
+                    Bonus
+                  </TableCell>
+                  <TableCell>Prenova spletne strani</TableCell>
+                  <TableCell className="text-right font-mono text-xs">
+                    1 teden
+                  </TableCell>
+                  <TableCell className="hidden min-[540px]:table-cell" />
+                  <TableCell className="text-right font-mono text-brand-orange">
+                    <span className="mr-1 text-muted-foreground line-through">
+                      €1.500
+                    </span>
+                    €0
+                  </TableCell>
+                </TableRow>
               </TableBody>
               <TableFooter>
                 <TableRow className="bg-muted/50 font-semibold">
@@ -294,8 +398,8 @@ export function Pricing() {
                   <TableCell className="text-right font-mono">
                     <span
                       className={
-                        total !== 8000
-                          ? total > 8000
+                        total !== 10600
+                          ? total > 10600
                             ? "text-destructive"
                             : "text-success"
                           : ""
@@ -415,6 +519,9 @@ export function Pricing() {
                     "Osnovno testiranje ključnih funkcionalnosti ter odprava napak, ki jih odkrijemo v tej fazi.",
                     "Kratka pisna navodila in kratko uvajalno izobraževanje (online), da boste rešitev lahko samostojno uporabljali.",
                     "30 dni podpore po predaji projekta za manjše popravke in pomoč pri uporabi v okviru dogovorjenih funkcionalnosti.",
+                    "Integracija z obstoječim računovodskim programom (uvoz strank, šifrant materiala, povratni tok za račune).",
+                    "Modul CRM z delovnimi nalogi in terenskim zaključevanjem.",
+                    "Implementacija prenovljenega dizajna spletne strani po obstoječih Figma zasnovah ter objava na produkcijskem okolju.",
                   ].map((item) => (
                     <li
                       key={item}
@@ -435,10 +542,12 @@ export function Pricing() {
                     "Mesečni stroški strežnika in storitve oblaka pri zunanjih ponudnikih.",
                     "Dodatne funkcionalnosti ali večje spremembe, ki niso opisane v tej ponudbi (npr. povsem nove vrste modulov ali zaslonov).",
                     "Priprava vsebin (besedila, fotografije, videi), profesionalno fotografiranje ali snemanje.",
-                    "Napredne integracije z internimi sistemi (npr. obstoječimi računovodskimi, proizvodnimi ali CRM sistemi).",
+                    "Integracije z dodatnimi zunanjimi sistemi, ki niso opisani v tej ponudbi (npr. Trello, zunanji koledarski sistemi razen Google Calendar, ERP sistemi).",
                     "Nadaljnji razvoj po zaključku projekta (novi moduli, nadgradnje ali večje prilagoditve po predaji).",
                     "Podpora končnim uporabnikom (helpdesk za vaše stranke) izven dogovorjenega obdobja podpore.",
                     "Daljše ali ponavljajoče se izobraževanje zaposlenih, ki presega osnovno uvajalno izobraževanje.",
+                    "Nativna mobilna aplikacija (sistem je spletna aplikacija, prilagojena za mobilne naprave).",
+                    "Podpis stranke na napravi pri zaključku naloga (opcijsko v kasnejši fazi).",
                   ].map((item) => (
                     <li
                       key={item}
@@ -453,12 +562,14 @@ export function Pricing() {
             </div>
 
             <p className="text-sm text-foreground/80">
-              Za navedeno ceno dobite delujoč, pregleden in za uporabo preprost
-              spletni sistem, ki bo vašim uporabnikom dostopen preko računalnika
-              in mobilnih naprav, vam pa bo omogočal varen vpogled in urejanje
-              podatkov. Vse dodatne želje, razširitve ali zunanje mesečne
-              naročnine niso vključene v ceno in bodo, če se zanje naknadno
-              odločite, predmet ločenega dogovora.
+              Za navedeno ceno dobite celovit poslovni sistem, ki združuje
+              evidenco zaposlenih, upravljanje kotlovnic in CRM z delovnimi
+              nalogi — vse v eni aplikaciji, dostopni preko računalnika in
+              mobilnih naprav. Sistem nadomesti obstoječega Vratarja, ročne
+              dnevnike kotlovnic in CRM serviserji.si ter odpravlja potrebo po
+              vzporedni uporabi več ločenih programov. Vse dodatne želje,
+              razširitve ali zunanje mesečne naročnine niso vključene v ceno in
+              bodo, če se zanje naknadno odločite, predmet ločenega dogovora.
             </p>
           </div>
 

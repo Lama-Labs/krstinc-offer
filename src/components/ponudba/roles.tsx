@@ -13,6 +13,9 @@ const ROLES = [
       "Konfiguracija polj in lastnosti",
       "Pregled in izvoz vseh podatkov",
       "Urejanje vnosov brez časovne omejitve",
+      "Upravljanje strank, kontaktov in delovnih nalogov",
+      "Konfiguracija šifranta in predpripravljenih postavk",
+      "Pregled in izvoz vseh nalogov in zgodovine",
     ],
   },
   {
@@ -25,6 +28,9 @@ const ROLES = [
       "Pregled svojih podatkov in zgodovine",
       "Urejanje vnosov do 24 ur za nazaj",
       "Dashboard z nalogami za dan",
+      "Prevzem in izvajanje delovnih nalogov",
+      "Zaključevanje nalogov na terenu z beleženjem materiala",
+      "Pregled svojih dodeljenih nalogov in zgodovine",
     ],
   },
   {
@@ -36,6 +42,7 @@ const ROLES = [
       "Pregled dnevnikov kotlovnic",
       "Pregled zadnje verzije vnosov",
       "Namenjen upravnikom stavb ali nadzoru",
+      "Pregled delovnih nalogov (samo branje)",
     ],
   },
 ];
