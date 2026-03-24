@@ -42,10 +42,23 @@ const PHASES = [
   },
   {
     phase: "Faza 4",
+    title: "Modul CRM",
+    duration: "2–3 tedne",
+    items: [
+      "Integracija z računovodskim programom (uvoz strank, šifrant materiala)",
+      "Entitete: stranke, kontakti, delovni nalogi, postavke",
+      "Ustvarjanje in dodeljevanje delovnih nalogov serviserjem",
+      "Terenska aplikacija za zaključevanje nalogov",
+      "Povratna integracija — prenos zaključenih nalogov nazaj v računovodski program",
+      "Testiranje integracije in popravki",
+    ],
+  },
+  {
+    phase: "Faza 5",
     title: "Integracija & predaja",
     duration: "1 teden",
     items: [
-      "Povezava obeh modulov v celoto — enotna izkušnja",
+      "Povezava vseh treh modulov v celoto — enotna prijava, skupna navigacija in konsistentna uporabniška izkušnja",
       "Končno testiranje in odpravljanje napak",
       "Namestitev na produkcijsko okolje",
       "Uvajanje uporabnikov in kratko izobraževanje",

@@ -9,16 +9,18 @@ export function Summary() {
             Povzetek projekta
           </h2>
           <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Na osnovi najinih pogovorov smo pripravili ponudbo za razvoj enotnega sistema,
-            ki bo nadomestil obstoječo aplikacijo Vratar in dodal nov modul za upravljanje
-            kotlovnic. Sistem bo zasnovan za uporabo na telefonu (teren) in računalniku (pisarna),
-            z enotno prijavo in skupno bazo uporabnikov.
+            Na osnovi sestankov smo pripravili posodobljeno ponudbo za razvoj enotnega
+            poslovnega sistema, ki združuje tri module: Vratar (evidenca zaposlenih),
+            Kotlovnice (upravljanje ogrevalnih sistemov) ter CRM (upravljanje strank,
+            delovnih nalogov in materiala). Sistem nadomesti obstoječo aplikacijo Vratar,
+            obstoječi CRM (serviserji.si) ter ročno vodene evidence kotlovnic — vse v eni
+            aplikaciji z enotno prijavo.
           </p>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
-          <StatCard value="2 modula" label="Vratar + Kotlovnice" delay={1} />
-          <StatCard value="~9 tednov" label="Predviden čas razvoja" delay={2} />
+          <StatCard value="3 moduli" label="Vratar · Kotlovnice · CRM" delay={1} />
+          <StatCard value="~10 tednov" label="Predviden čas razvoja" delay={2} />
           <StatCard
             value="3 vloge"
             label="Admin · Serviser · Pregledovalec"

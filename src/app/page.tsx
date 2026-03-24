@@ -6,6 +6,7 @@ import { Hero } from "@/components/ponudba/hero";
 import { Summary } from "@/components/ponudba/summary";
 import { ModuleVratar } from "@/components/ponudba/module-vratar";
 import { ModuleKotlovnice } from "@/components/ponudba/module-kotlovnice";
+import { ModuleCRM } from "@/components/ponudba/module-crm";
 import { Roles } from "@/components/ponudba/roles";
 import { Phases } from "@/components/ponudba/phases";
 import { Pricing } from "@/components/ponudba/pricing";
@@ -24,6 +25,7 @@ export default function PonudbaPage() {
         <Summary />
         <ModuleVratar />
         <ModuleKotlovnice />
+        <ModuleCRM />
         <Roles />
         <Phases />
         <Pricing />

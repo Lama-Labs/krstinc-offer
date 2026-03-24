@@ -9,6 +9,7 @@ const NAV_LABELS: Record<SectionId, string> = {
   povzetek: "POVZETEK",
   vratar: "VRATAR",
   kotlovnice: "KOTLOVNICE",
+  crm: "CRM",
   vloge: "VLOGE",
   faze: "FAZE",
   cena: "CENA",
