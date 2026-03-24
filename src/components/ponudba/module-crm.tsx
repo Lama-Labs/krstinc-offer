@@ -57,12 +57,6 @@ const FEATURES = [
       "Odprava ročnega prepisovanja podatkov",
     ],
   },
-  {
-    title: "E-pošta",
-    features: [
-      "Pošiljanje nalogov in potrditev strankam po e-pošti neposredno iz sistema",
-    ],
-  },
 ];
 
 const MODULE_CONNECTIONS = [
